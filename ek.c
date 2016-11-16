@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAXN 100000
+#define MAXN 1000000
 #define INF (1<<30)
 
 
