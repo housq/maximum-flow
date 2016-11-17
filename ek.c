@@ -149,10 +149,13 @@ int ekrun(){
 	return deltac;
 }
 
+int naugment = 0;
+
 int ek(){
 	int f;
 	struct edge *p;
 	while(f = ekrun()){
+		naugment++;
 			}
 	f = 0;
 	p = adj[src];
@@ -171,8 +174,9 @@ int main(){
 	gettimeofday(&start,NULL);
 	flow = ek();
 	gettimeofday(&finish,NULL);
-	printf("%ld\n",(finish.tv_sec-start.tv_sec) * 1000000 + finish.tv_usec - start.tv_usec);
 	printf("%d\n",flow);
+	printf("%ld\n",(finish.tv_sec-start.tv_sec) * 1000000 + finish.tv_usec - start.tv_usec);
+	printf("%d\n",naugment);
 	return 0;
 }
 
