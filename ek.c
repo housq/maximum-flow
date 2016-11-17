@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/time.h>
 
 #define MAXN 1000000
 #define INF (1<<30)
@@ -163,9 +164,15 @@ int ek(){
 
 }
 int main(){
+	struct timeval start,finish;
+	int flow;
 	init();
 	readdata();
-	printf("%d\n",ek());
+	gettimeofday(&start,NULL);
+	flow = ek();
+	gettimeofday(&finish,NULL);
+	printf("%ld\n",(finish.tv_sec-start.tv_sec) * 1000000 + finish.tv_usec - start.tv_usec);
+	printf("%d\n",flow);
 	return 0;
 }
 
