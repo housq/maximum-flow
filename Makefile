@@ -1,1 +1,2 @@
 ek:
+dinic:
