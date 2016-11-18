@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-#define MAXN 1000000
+#define MAXN 10000000
 #define INF (1<<30)
 
 
