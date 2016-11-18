@@ -143,10 +143,8 @@ void dinicdfs(int i, int depth, struct edge *link){
 		if(cfp[depth] == 0) return;
 		p = p->next;
 	}
-	if( cfp[depth-1]!=0 ){
-		//exhausted, prune this node
-		d[i] = -1;
-	}
+	//exhausted, prune this node
+	d[i] = -1;
 	return;
 }
 
