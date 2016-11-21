@@ -148,6 +148,8 @@ void dinicdfs(int i, int depth, struct edge *link){
 	return;
 }
 
+int dist_st[MAXN];
+
 int dinicrun(){
 	int i,j;
 	struct edge *p;
@@ -180,6 +182,7 @@ int dinicrun(){
 	if(!found){
 		return 0;
 	}
+	dist_st[numiter-1]=d[src];
 	dinicdfs(src, 0, NULL);
 	return 1;
 }
@@ -202,6 +205,7 @@ int dinic(){
 int main(){
 	struct timeval start,finish;
 	int flow;
+	int i;
 	init();
 	readdata();
 	gettimeofday(&start,NULL);
@@ -211,6 +215,9 @@ int main(){
 	printf("%ld\n",(finish.tv_sec-start.tv_sec) * 1000000 + finish.tv_usec - start.tv_usec);
 	printf("%d\n",numaug);
 	printf("%d\n",numiter);
+	for(i=0;i<numiter-1;i++)
+		printf("%d ",dist_st[i]);
+	printf("\n");
 	return 0;
 }
 
